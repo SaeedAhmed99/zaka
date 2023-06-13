@@ -1,0 +1,234 @@
+        /* body Counter */
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .direction-ltr {
+            direction: ltr;
+        }
+        
+        .direction-rtl {
+            direction: rtl;
+        }
+        
+        .PageContainer {
+            max-width: 1920px;
+            height: 100%;
+        }
+        
+ 
+        
+        .disNone {
+            display: none;
+        }
+        
+        .disBlock {
+            display: block;
+        }
+        
+        /* @font-face {
+            font-family: TheSans;
+            src: url(../fonts/TheSans-Bold-alinma.ttf);
+        } */
+        /* topSide  *****************************************************************************************/
+        
+        .mySwiper {
+            border-radius: 5px;
+            box-shadow: 1px 0px 10px rgba(9, 67, 121, 0.418);
+        }
+        
+        .swiper-slide {
+            transition: all 1s ease-in-out !important;
+        }
+        
+        .news-swiper:hover {
+            width: 435px !important;
+        }
+        
+        .cover {
+            width: 100% !important;
+            height: 100%;
+            transition: all 1s ease-in-out !important;
+            cursor: pointer;
+            position: absolute;
+            z-index: 855;
+            background: linear-gradient(0deg, rgba(2, 0, 36, 0.685) 0%, rgb(9, 67, 121) 0%, rgba(0, 212, 255, 0) 100%);
+        }
+        
+        .cover:hover {
+            opacity: 1;
+            transition: all 1s ease-in-out !important;
+            background: linear-gradient(0deg, rgb(2, 0, 36) 0%, rgba(9, 67, 121, 0.685) 0%, rgba(0, 212, 255, 0) 100%);
+        }
+        
+        .swiper-button-prev:after,
+        .swiper-rtl .swiper-button-next:after {
+            color: white;
+            opacity: .5;
+        }
+        
+        .swiper-slide img {
+            height: 100%;
+            position: relative;
+            object-fit: contain;
+            transition: all 1s ease-in-out !important;
+        }
+        
+        .swiper-slide h6 {
+            color: white;
+            font-weight: 500;
+            bottom: 0 !important;
+            z-index: 600000;
+            padding: 10px 30px;
+            font-size: 16px;
+            line-height: 1.4;
+            /* font-family: TheSans; */
+            position: absolute;
+            bottom: 0;
+        }
+        
+        .newsContainer {
+            padding: 80px 0px;
+            margin: 0;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .newsLable {
+            color: rgba(0, 94, 182, 0.808) !important;
+            font-size: 25px;
+            font-weight: bolder;
+            margin-bottom: 20px;
+            /* font-family: TheSans; */
+            font-weight: bolder;
+            text-shadow: -1px 0px 11px rgba(153, 152, 255, 0.95);
+        }
+        
+        .newsContainer .swiper-slide {
+            height: 300px;
+            position: relative;
+        }
+
+
+        .ImageGrid .column {
+            max-width: 33.33%;
+        }
+        
+        .ImageGrid img {
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all .5s ease-in-out;
+        }
+        
+        .ImageGrid {
+            /* background-color: #00263d; */
+            padding: 100px 0px;
+        }
+        
+        .imgDiv {
+            /* margin-bottom: 20px; */
+            position: relative;
+        }
+        
+        .imgDiv div.cover {
+            background: linear-gradient(0deg, rgba(2, 0, 36, 0.685) 0%, rgb(9, 67, 121) 0%, rgba(0, 212, 255, 0) 100%);
+            height: 100%;
+            width: 100%;
+            top: 0;
+            opacity: 0;
+            transition: all .5s ease-in-out !important;
+            cursor: pointer;
+            border-radius: 8px;
+            z-index: 5555555555555555;
+            position: absolute;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .imgDiv .cover:hover {
+            opacity: 1 !important;
+            height: 100% !important;
+        }
+        
+        .cover img {
+            z-index: 555555;
+            border-radius: 0 !important;
+            margin-inline-start: 10px;
+        }
+        
+        .cover span {
+            font-weight: bolder;
+            color: white;
+            font-size: 15px;
+            z-index: 555555;
+        }
+        
+        .mySwiper2 .swiper-pagination-horizontal {
+            background: #433939;
+            border-radius: 5px;
+            color: white;
+            font-weight: 700;
+            width: 10% !important;
+        }
+        
+        .swiper-button-next:after,
+        .swiper-rtl .swiper-button-prev:after {
+            color: powderblue;
+        }
+        
+        .swiper-button-prev:after,
+        .swiper-rtl .swiper-button-next:after {
+            color: powderblue;
+        }
+        
+        .mySwiper2 {
+            border-radius: 5px;
+        }
+        
+        .modal {
+            z-index: 99999999999;
+        }
+        
+        .ImageGrid h6 {
+            color: white;
+            font-size: 22px;
+            font-weight: bolder;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        @media screen and (max-width: 800px) {
+            .ImageGrid .column {
+                -ms-flex: 50%;
+                flex: 50%;
+                max-width: 50%;
+            }
+        }
+        
+        
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        
+        @media screen and (max-width: 600px) {
+            .ImageGrid .column {
+                -ms-flex: 100%;
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+
+        .mySwiper2 .swiper-pagination-horizontal {
+            background: #433939;
+            border-radius: 5px;
+            color: white;
+            font-weight: 700;
+            width: 10%;
+        }
+
+        .paddingZero {
+            padding: 0 !important;
+        }

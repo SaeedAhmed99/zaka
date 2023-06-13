@@ -1,0 +1,265 @@
+/* Logo Styles */
+.footer-logo img {
+width: 110px;
+}
+
+/* Laws Img Style */
+.img-circle img {
+border-radius:50%;
+}
+
+/* Fatwas Styles */
+.fatwas .panel {
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fatwas .panel .panel-title {
+    background: #2D9FD0;
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fatwas .panel .panel-title a {
+    color: #FFF;
+    display: block;
+    font-size: 18px;
+    padding-left: 55px;
+}
+
+.fatwas .panel .panel-content {
+    background: #FBFBFB;
+    border: 1px solid #d6d6d6;
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: 300;
+}
+
+.fatwas .panel .panel-title a::before { 
+    z-index: 2;
+    content: "\f067";
+    font-family: 'FontAwesome';
+    display: inline-block;
+    width: 48px;
+    line-height: 42px;
+    background: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    overflow: hidden;
+    background: #091f28;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+.fatwas .panel .panel-title a::after {
+    z-index: 1;
+    left: 20px;
+    bottom: 0;
+    position: absolute;
+    display: inline-block;
+    background: #091f28;
+    left: -4px;
+    top: -3px;
+    width: 48px;
+    height: 48px;
+    line-height: 46px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: 0.5s 0.2s ease-out;
+    -moz-transition: 0.5s 0.2s ease-out;
+    -o-transition: 0.5s 0.2s ease-out;
+    transition: 0.5s 0.2s ease-out;
+    content: '';
+}
+
+.fatwas .panel .panel-collapse {
+    background: #FFF;
+    margin-top:2px;
+}
+
+.fatwas .page-numbers {
+    background: #FFF;
+    color: #e2a081;
+    border-radius: 6px;
+    padding: 3px;
+    border: 1px dotted #000;
+    margin: 0 1px;
+}
+
+.fatwas .panel .panel-collapse .panel-content p {
+    margin-bottom: 0px;
+}
+
+.fatwas .page-numbers.current {
+    background: #F26522;
+    color: #FFF;
+}
+
+.fatwas-pagination {
+    margin-top: 15px;
+}
+
+/* Videos */
+body.page-id-17627.tm_wpb_vc_js_status_false .main-content-area {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+body.page-id-17627 .main-content-area .vc-row-tm-section-padding {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+div.main-content-area #videos_gallery li.imgLiii figure{
+    border: 1px solid #DDD;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease-in-out;
+    text-align: center;
+    margin: 5px;
+}
+
+
+div.main-content-area #videos_gallery li.imgLiii:hover figure {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+div.main-content-area #videos_gallery li.imgLiii figure figcaption {
+    background: #FFF;
+}
+
+div.main-content-area #videos_gallery li figure figcaption > h3 {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    font-family: "Open Sans", sans-serif !important;
+    color: #242424 !important;
+    border-bottom:0px !important;
+}
+
+div.main-content-area #videos_gallery li figure figcaption > p {
+    font-size: 12px !important;
+    color: #242424 !important;
+    font-family: "Open Sans", sans-serif !important;    
+}
+
+/* Zakat Calculations */
+div.zakat-calculations .icon-box {
+    padding: 50px 15px;
+    border-radius: 8px;
+    margin: 0 15px;
+    border-bottom: 1px solid #c4c4c4;
+    -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 2px 3px rgba(0,0,0,.2);
+    box-shadow: 0 2px 3px rgba(0,0,0,.2);
+    background: #FFF;
+}
+
+div.zakat-calculations .icon-box .icon-box-title {
+    font-size: 18px;
+}
+
+body.page-id-17644 section.page-title+section,
+body.page-id-17671 section.page-title+section,
+body.page-id-17678 section.page-title+section,
+body.page-id-17684 section.page-title+section,
+body.page-id-17689 section.page-title+section,
+body.page-id-17838 section.page-title+section,
+body.page-id-16041 section.page-title+section,
+body.page-id-17694 section.page-title+section, 
+body.page-id-17938 section.page-title+section,
+body.page-id-17943 section.page-title+section,
+body.page-id-17644 section.page-title+section,
+body.page-id-17671 section.page-title+section,
+body.page-id-17684 section.page-title+section,
+body.page-id-17678 section.page-title+section,
+body.page-id-17689 section.page-title+section,
+body.page-id-18014 section.page-title+section,
+body.page-id-18020 section.page-title+section,
+body.page-id-18024 section.page-title+section,
+body.page-id-18022 section.page-title+section,
+body.page-id-18026 section.page-title+section
+{
+        background-image: url("../../../uploads/2018/04/Pattern.png");
+}
+
+body.page-id-17838 section.page-title+section .vc_btn3-shape-rounded,
+body.page-id-17943 section.page-title+section .vc_btn3-shape-rounded,
+body.page-id-16041 section.page-title+section .vc_btn3-shape-rounded {
+    width: 70%;
+    text-align: center;
+}
+
+.zakat-container .card-header {
+    background: #F26522;
+    text-align: center;
+}
+
+.zakat-container .card-header h2 {
+    font-size: 22px;
+    color: #FFF;
+}
+
+.zakat-container .table {
+    margin-bottom: 0px;
+}
+
+@media(min-width: 768px) {
+    .swal-wide {
+        width: 50%;
+    }
+}
+
+.swal-overlay--show-modal .swal-modal {
+    will-change: auto !important;
+}
+
+.bordered {
+    border: 1px solid #999;
+    background: #fdfdfd;
+    padding: 5px;
+}
+
+.btn-view-campaign span {
+    margin-left: 10px;
+}
+
+#top-primary-nav .menuzord-menu > li > a, #top-primary-nav-clone .menuzord-menu > li > a,
+#top-primary-nav .menuzord-menu ul.dropdown li a, #top-primary-nav-clone .menuzord-menu ul.dropdown li a {
+    font-size: 0.9rem !important;
+}
+
+.nivo-lightbox-theme-default .nivo-lightbox-close {
+    width: 40px;
+    height: 50px;
+}
+
+.owl-carousel {
+    display: block !important;
+}
+
+#videos_gallery figure img {
+    height: 150px;
+}
+
+#videos_gallery figure figcaption > h3 {
+    font-family: "Tahoma", "arial", sans-serif !important;
+    line-height: 25px !important;
+}
+
+#videos_gallery figcaption p {
+    font-family: "Tahoma", "arial", sans-serif !important;
+    font-size: 18px !important;
+}
+
