@@ -766,17 +766,18 @@ class HomeController extends Controller
                 '0')->where('status', 1)->orderby('webmaster_id', 'asc')->orderby('row_no', 'asc')->get();
 
             // Topics if NO Cat_ID
-            $Topics = Topic::select("id")->where('title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')
-                ->orwhere('seo_title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')
-                ->orwhere('details_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%');
-
+            // $Topics = Topic::select("id")->where('title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')
+            //     ->orwhere('seo_title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')
+            //     ->orwhere('details_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%');
+            $Topics = Topic::where('title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')->orwhere('seo_title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')->orwhere('details_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')->orderby('id', 'desc')->get();
             $topics_ids = TopicField::select("topic_id")->where("field_value", 'like', '%' . $search_word . '%');
-            $Topics = $Topics->orwherein("id", $topics_ids);
+            // $Topics = $Topics->orwherein("id", $topics_ids);
             if (!empty($WebmasterSection)) {
-                $Topics = Topic::where("webmaster_id", $WebmasterSection->id)->where("status", true)->wherein("id", $Topics)->orderby('id', 'desc')->paginate(env('FRONTEND_PAGINATION'));
+                $Topics = Topic::where("webmaster_id", $WebmasterSection->id)->where("status", true)->orderby('id', 'desc')->paginate(env('FRONTEND_PAGINATION'));
             } else {
-                $Topics = Topic::where("status", true)->wherein("id", $Topics)->orderby('id', 'desc')->paginate(env('FRONTEND_PAGINATION'));
+                $Topics = Topic::where("status", true)->orderby('id', 'desc')->paginate(env('FRONTEND_PAGINATION'));
             }
+            
             // Get Most Viewed
             $TopicsMostViewed = Topic::where([['status', 1], ['expire_date', '>=', date("Y-m-d")], ['expire_date', '<>', null]])->orwhere([['status', 1], ['expire_date', null]])->orderby('visits', 'desc')->limit(3)->get();
 
@@ -805,6 +806,7 @@ class HomeController extends Controller
                     $view = "table";
                 }
             }
+            
             $institutions = $this->institutions($WebmasterSettings->institutions_section_id);
             return view("frontEnd." . $view,
                 compact(

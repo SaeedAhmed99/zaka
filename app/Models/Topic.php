@@ -11,6 +11,7 @@ use App\Helpers\Helper;
 class Topic extends Model implements Feedable
 {
     use HasFactory;
+    
 
     public function toFeedItem(): FeedItem
     {

@@ -17,7 +17,7 @@
             {{Form::close()}}
         </div>
 
-        @if(count($Categories)>0)
+        @if(count($Categories)<0)
             <?php
             $title_var = "title_" . @Helper::currentLanguage()->code;
             $title_var2 = "title_" . env('DEFAULT_LANGUAGE');
