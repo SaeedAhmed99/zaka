@@ -45,13 +45,13 @@
             <div class="row">
 
                 <div class="col-lg-{{(count($Categories)>0)? "8":"12"}}">
-                    @if($Topics->total() == 0)
+                    @if(count($Topics) == 0)
                         <div class="alert alert-warning">
                             <i class="fa fa-info"></i> &nbsp; {{ __('frontend.noData') }}
                         </div>
                     @else
                         <div class="row">
-                            @if($Topics->total() > 0)
+                            @if(count($Topics) > 0)
 
                                 <?php
                                 $title_var = "title_" . @Helper::currentLanguage()->code;
@@ -457,16 +457,16 @@
                                 @endforeach
 
                         </div>
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-lg-8">
                                 {!! $Topics->appends(request()->input())->links() !!}
                             </div>
                             <div class="col-lg-4 text-right">
                                 <br>
                                 <small>{{ $Topics->firstItem() }} - {{ $Topics->lastItem() }} {{ __('backend.of') }}
-                                    ( {{ $Topics->total()  }} ) {{ __('backend.records') }}</small>
+                                    ( {{ count($Topics)  }} ) {{ __('backend.records') }}</small>
                             </div>
-                        </div>
+                        </div> --}}
                     @endif
                     @endif
                 </div>

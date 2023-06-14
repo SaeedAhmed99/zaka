@@ -244,7 +244,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
     {
         // Get Site Settings
         $Setting = Setting::find(1);
-
+        
         // Response Details
         $response_details = [
             'facebook' => $Setting->social_link1,

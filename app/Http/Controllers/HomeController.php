@@ -732,7 +732,6 @@ class HomeController extends Controller
 
     public function searchTopics()
     {
-
         // General Webmaster Settings
         $WebmasterSettings = WebmasterSetting::find(1);
 
@@ -770,13 +769,14 @@ class HomeController extends Controller
             //     ->orwhere('seo_title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')
             //     ->orwhere('details_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%');
             $Topics = Topic::where('title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')->orwhere('seo_title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')->orwhere('details_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')->orderby('id', 'desc')->get();
+            // dd($Topics);
             $topics_ids = TopicField::select("topic_id")->where("field_value", 'like', '%' . $search_word . '%');
             // $Topics = $Topics->orwherein("id", $topics_ids);
-            if (!empty($WebmasterSection)) {
-                $Topics = Topic::where("webmaster_id", $WebmasterSection->id)->where("status", true)->orderby('id', 'desc')->paginate(env('FRONTEND_PAGINATION'));
-            } else {
-                $Topics = Topic::where("status", true)->orderby('id', 'desc')->paginate(env('FRONTEND_PAGINATION'));
-            }
+            // if (!empty($WebmasterSection)) {
+            //     $Topics = Topic::where("webmaster_id", $WebmasterSection->id)->where("status", true)->orderby('id', 'desc')->paginate(env('FRONTEND_PAGINATION'));
+            // } else {
+            //     $Topics = Topic::where("status", true)->orderby('id', 'desc')->paginate(env('FRONTEND_PAGINATION'));
+            // }
             
             // Get Most Viewed
             $TopicsMostViewed = Topic::where([['status', 1], ['expire_date', '>=', date("Y-m-d")], ['expire_date', '<>', null]])->orwhere([['status', 1], ['expire_date', null]])->orderby('visits', 'desc')->limit(3)->get();
