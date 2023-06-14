@@ -78,7 +78,7 @@
                 <div class="col-lg-{{(count($Categories)>0)? "8":"12"}}">
 
                     <article>
-                        @if(count($Topic->photos)>0)
+                        @if(count($Topic->photos)>0 || $Topic->photo_file)
                             {{--photo slider--}}
                             <div class="post-slider">
                                 @if($WebmasterSection->title_status)
@@ -91,20 +91,23 @@
                                         </h1>
                                     </div>
                                 @endif
-                                @if(count($Topic->photos) == 1)
-                                    <div class="" style="height: 400px;">
-                                        <a href="#">
-                                            <img src="uploads/topics/{{$Topic->photo_file}}" style="width: 100% !important; height: 400px;">
-                                        </a>
-                                    </div>
-                                @elseif(count($Topic->photos) > 1)
+                                @if(count($Topic->photos) == 0)
+                                    @if ($Topic->photo_file)
+                                        <div class="" style="height: 400px;">
+                                            <a href="#">
+                                                <img src="uploads/topics/{{$Topic->photo_file}}" style="width: 100% !important; height: 400px;">
+                                            </a>
+                                        </div>
+                                    @endif
+                                @elseif(count($Topic->photos) >= 1)
                                     <div class="row ImageGrid" style="margin-bottom: 0; padding-top: 10px; padding-bottom: 8px;">
-                                        
-                                            <div class="" style="height: 400px;">
-                                                <a href="#">
-                                                    <img src="uploads/topics/{{$Topic->photo_file}}" style="width: 100% !important; height: 400px;">
-                                                </a>
-                                            </div>
+                                            @if ($Topic->photo_file)
+                                                <div class="" style="height: 400px;">
+                                                    <a href="#">
+                                                        <img src="uploads/topics/{{$Topic->photo_file}}" style="width: 100% !important; height: 400px;">
+                                                    </a>
+                                                </div>
+                                            @endif
                                             <div class="swiper mySwiper">
                                                 <div class="swiper-wrapper" style="height: 300px;">
                                                     {{-- @dd($Topic->photos) --}}
