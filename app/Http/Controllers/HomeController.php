@@ -768,7 +768,9 @@ class HomeController extends Controller
             // $Topics = Topic::select("id")->where('title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')
             //     ->orwhere('seo_title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')
             //     ->orwhere('details_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%');
-            $Topics = Topic::where('title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')->orwhere('seo_title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')->orwhere('details_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')->orderby('id', 'desc')->get();
+            $Topics = Topic::where('title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')->orwhere('seo_title_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')->orwhere('details_' . Helper::currentLanguage()->code, 'like', '%' . $search_word . '%')->where('webmaster_id', '8')->orderby('id', 'desc')->get();
+            // dd($Topics);
+
             // dd($Topics);
             $topics_ids = TopicField::select("topic_id")->where("field_value", 'like', '%' . $search_word . '%');
             // $Topics = $Topics->orwherein("id", $topics_ids);
@@ -806,7 +808,6 @@ class HomeController extends Controller
                     $view = "table";
                 }
             }
-            
             $institutions = $this->institutions($WebmasterSettings->institutions_section_id);
             return view("frontEnd." . $view,
                 compact(
@@ -1932,7 +1933,8 @@ class HomeController extends Controller
             // Topics if NO Cat_ID
             $Topics = Topic::where([['status', 1], ['expire_date', '>=', date("Y-m-d")], ['expire_date', '<>', null]])->orwhere([['status', 1], ['expire_date', null]])->orderby('row_no', 'asc')->paginate(env('FRONTEND_PAGINATION'));
             // Get Most Viewed
-          
+            // dd($Topics);
+
 
             $institutions = $this->institutions($WebmasterSettings->institutions_section_id);
             $SideBanners = Banner::where('section_id', $WebmasterSettings->side_banners_section_id)->where('status',

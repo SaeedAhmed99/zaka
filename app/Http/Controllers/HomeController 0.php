@@ -50,6 +50,7 @@ class HomeController extends Controller
 
     public function SEOByLang($lang, $seo_url_slug = 0)
     {
+        
         $lang = App::getLocale();\Session::put('locale', $lang);
         $seo_url_slug = Str::slug($seo_url_slug, '-');
 
@@ -175,11 +176,13 @@ class HomeController extends Controller
 
     public function HomePage()
     {
+        
         return $this->HomePageByLang("");
     }
 
     public function HomePageByLang($lang)
     {
+        
  // $month = date("d");
  //                                         $year = date("Y");
  //                                        $response = Http::get("http://api.aladhan.com/v1/calendarByCity?city=Gaza&country=Palestine&method=2&month=$month&year=$year")->json();
@@ -298,6 +301,7 @@ class HomeController extends Controller
 
     public function topic($section = 0, $id = 0)
     {
+        
         // check url slug
         if (!is_numeric($id)) {
             return $this->SEOByLang($section, $id);
@@ -314,6 +318,7 @@ class HomeController extends Controller
 
     public function topicsByLang($lang, $section = 0, $cat = 0)
     {
+        
         if (!is_numeric($cat)) {
             return $this->topicsByLang($section, $cat, 0);
         }
@@ -642,6 +647,7 @@ class HomeController extends Controller
 
     public function userTopics($id)
     {
+        
         return $this->userTopicsByLang("", $id);
     }
 
@@ -1884,6 +1890,7 @@ class HomeController extends Controller
     }
     public function LibraryTest()
     {
+
         return $this->LibraryTestPageByLang("");
     }
 
@@ -1900,7 +1907,6 @@ class HomeController extends Controller
             $id = $WebmasterSettings->library_page_id;
             // dd($id);
             $Topic = Topic::where('id', '=', 1)->where('status', '=', '1')->first();
-
                // count topics by Category
             $category_and_topics_count = array();
             $AllSections = Section::where('status', 1)->orderby('row_no', 'asc')->get();
